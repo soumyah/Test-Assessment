@@ -1,14 +1,14 @@
 describe("Dynamic Buttons", function () {
-    var dynamicButtons = jasmine.createSpy('DynamicButtons');
+    let dynamicButtons = jasmine.createSpy('DynamicButtons');
     dynamicButtons(12, function () {
         return true;
     });
-    var addEventListener = jasmine.createSpy(document.addEventListner);
+    let addEventListener = jasmine.createSpy(document.addEventListner);
     addEventListener('DOMContentLoaded', function () {
         return true;
     });
-    var buttons = jasmine.createSpy('button');
-    var i = 5;
+    let buttons = jasmine.createSpy('button');
+    let i = 5;
     buttons(i, function () {
         return true;
     });
