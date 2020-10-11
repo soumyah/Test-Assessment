@@ -1,3 +1,5 @@
+'use strict';
+
 function dynamicButtons(n) {
     document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < n; i++) {
