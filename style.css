@@ -4,14 +4,11 @@
     box-sizing: border-box;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 body {
     font-family: sans-serif;
 }
 
+/* Login Form */
 .main-content a {
     text-decoration: none;
     color: #1ab188;
@@ -24,7 +21,7 @@ body {
 
 .main-content {
     max-width: 630px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 15px;
     background: #c1bdba;
 }
@@ -82,12 +79,10 @@ body {
 .main-content label {
     position: absolute;
     transform: translateY(6px);
-    /* left: 13px; */
     width: 100%;
     padding: 0 13px;
     color: rgba(255, 255, 255, .5);
     transition: all 0.25s ease;
-    -webkit-backface-visibility: hidden;
     pointer-events: none;
     font-size: 22px;
 }
@@ -181,13 +176,13 @@ body {
 }
 
 .first-name-label {
-    background: url(../Test-Assessment-SystemC-Project/assets/img/first-name.PNG) no-repeat right;
+    background: url(assets/img/first-name.PNG) no-repeat right;
     background-position: 97% 97%;
     height: 30px;
 }
 
 .set-password-label {
-    background: url(../Test-Assessment-SystemC-Project/assets/img/set-password.PNG) no-repeat right;
+    background: url(assets/img/set-password.PNG) no-repeat right;
     background-position: 99% 99%;
 }
 
