@@ -8,8 +8,8 @@ function dynamicButtons(n) {
     }, false);
 }
 
-function buttonTags(i) {
-    let addIndex = i + 1;
+function buttonTags(index) {
+    let addIndex = index + 1;
     let buttonElement = document.createElement('button');
     buttonElement.id = 'button_' + addIndex;
     buttonElement.type = 'button';
@@ -18,7 +18,7 @@ function buttonTags(i) {
 
     buttonElement.onclick = function (event) {
         console.log("Button Name: ", event.target.innerHTML);
-        console.log("Index: ", i)
+        console.log("Index: ", index)
     };
     let container = document.getElementById('dynamic-buttons');
     if (container) {
@@ -27,29 +27,29 @@ function buttonTags(i) {
 
 }
 
-function removeLabel(e, id) {
-    let labelElement = document.getElementById(id);
-    if (e.target.value === '') {
+function removeLabel(event, elementId) {
+    let labelElement = document.getElementById(elementId);
+    if (event.target.value === '') {
         labelElement.classList.remove('active');
         labelElement.classList.remove('hightlight');
-        if (id === 'first-name') {
+        if (elementId === 'first-name') {
             labelElement.classList.add('first-name-label')
-        } else if (id === 'pwd') {
+        } else if (elementId === 'pwd') {
             labelElement.classList.add('set-password-label')
         }
     } else {
         labelElement.classList.add('active');
         labelElement.classList.add('highlight')
-        if (id === 'first-name') {
+        if (elementId === 'first-name') {
             labelElement.classList.remove('first-name-label')
-        } else if (id === 'pwd') {
+        } else if (elementId === 'pwd') {
             labelElement.classList.remove('set-password-label')
         }
     }
-    validateForm(e.target.name);
+    validateForm(event.target.name);
 }
 
-function activeTabs(evt, sectionId) {
+function activeTabs(event, sectionId) {
     let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -60,7 +60,7 @@ function activeTabs(evt, sectionId) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(sectionId).style.display = "block";
-    evt.currentTarget.className += " active";
+    event.currentTarget.className += " active";
 }
 
 function validateForm(name) {

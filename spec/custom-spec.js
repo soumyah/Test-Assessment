@@ -7,9 +7,21 @@ describe("Dynamic Buttons", function () {
     addEventListener('DOMContentLoaded', function () {
         return true;
     });
-    let buttons = jasmine.createSpy('button');
+    let buttonTags = jasmine.createSpy('buttonTags');
     let i = 5;
-    buttons(i, function () {
+    buttonTags(i, function () {
+        return true;
+    });
+    let removeLabel = jasmine.createSpy('RemoveLabel');
+    removeLabel('event', 'elementId', function () {
+        return true;
+    });
+    let activeTabs = jasmine.createSpy('ActiveTabs');
+    activeTabs('event', 'sectionId', function () {
+        return true;
+    });
+    let validateForm = jasmine.createSpy('ValidateForm');
+    validateForm('name', function () {
         return true;
     });
     it('When the page loads, dynamicButtons method should call with n number of arguments', function () {
@@ -22,19 +34,36 @@ describe("Dynamic Buttons", function () {
     it('When the document loaded, create n number of buttons/dynamic buttons', function () {
         dynamicButtons(5);
         addEventListener('DOMContentLoaded');
-        expect(buttons).toHaveBeenCalledWith(5, jasmine.any(Function));
+        expect(buttonTags).toHaveBeenCalledWith(5, jasmine.any(Function));
     });
     it('When the button method called, get the text of the button', function () {
         const elementMock = {
             innerHTML: 'Button 1'
         };
-        buttons(1);
+        buttonTags(1);
         spyOn(document, 'getElementById').and.returnValue(elementMock);
         expect(document.getElementById('dynamic-buttons').innerHTML).toBe('Button 1');
     });
     it('When the button method called, append the button to the dynamic_button id', function () {
         jasmine.createSpy(document.getElementById('dynamic-buttons'), 'appendChild').and.returnValue(null);
-        buttons(1);
+        buttonTags(1);
         expect(document.getElementById('dynamic-buttons')).toEqual(null);
+    });
+
+    it('When enter the value to the input field then call the removeLabel method', function () {
+        expect(removeLabel).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(String), jasmine.any(Function));
+    });
+
+    it('When enter the values to the input field then validate the value with the validate form', function () {
+        removeLabel('xyz', 'elementId');
+        expect(validateForm).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(Function));
+    })
+
+    it('When click on the header tabs then activeTabs method should call', function () {
+        expect(activeTabs).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(String), jasmine.any(Function));
+    });
+
+    it('When enter the value in any of the input field then validateForm should call', function () {
+        expect(validateForm).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(Function));
     });
 });
