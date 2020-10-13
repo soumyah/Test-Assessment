@@ -8,7 +8,7 @@ body {
     font-family: sans-serif;
 }
 
-/* Login Form */
+/* Login Form CSS*/
 .main-content a {
     text-decoration: none;
     color: #1ab188;
@@ -21,7 +21,7 @@ body {
 
 .main-content {
     max-width: 630px;
-    margin: 30px auto;
+    margin: 0px auto 25px;
     padding: 15px;
     background: #c1bdba;
 }
@@ -371,9 +371,51 @@ body {
     margin-right: 15px;
 }
 
+/* Dynamic Button CSS */
+
 .btn-styled {
     font-size: 14px;
     margin: 8px;
     padding: 0 10px;
     line-height: 2;
+}
+
+/* Header Tab CSS */
+
+.header-tab {
+    overflow: hidden;
+    width: 100%;
+    background: rgba(19, 35, 47, .9);
+    border-radius: 4px;
+    max-width: 630px;
+    margin: 25px auto;
+}
+
+.header-tab button {
+    background: rgba(160, 179, 176, .25);
+    color: #a0b3b0;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    width: 33.3333333%;
+}
+
+.header-tab button.active,
+.header-tab button:hover {
+    background: #1ab188;
+    color: #fff
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.tabactive {
+    display: block;
 }
