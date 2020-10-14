@@ -409,13 +409,3 @@ body {
     background: #1ab188;
     color: #fff
 }
-
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border-top: none;
-}
-
-.tabactive {
-    display: block;
-}

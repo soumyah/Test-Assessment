@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test Assessmen System C</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="custom.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="header-tab">
+        <button class="tablinks" onclick="window.location.href = 'index.html';">Sign Up</button>
+        <button class="tablinks active" onclick="window.location.href = 'fund-amount.html';">Fund Amount</button>
+        <button class="tablinks" onclick="window.location.href = 'dynamic-buttons.html';">Dynamic Buttons</button>
+    </div>
+
+    <div class="funding__amount--main-content" id="fundAmount">
+        <div class="funding__container">
+            <div class="funding__amount-needed">
+                <div class="funding__amount-needed-inner">$167 still needed for this project</div>
+            </div>
+            <div class="funding__progress-bar">
+                <div class="funding__current-progress">
+                </div>
+            </div>
+            <div class="funding__give-section">
+                <p class="funding__days-left"><strong><span class="funding__text-highlight">Only 3 days
+                            left</span></strong> to fund this project.</p>
+                <p>Join the <b>42</b> other donors who have already supported this project. Every dollar helps.</p>
+                <form class="funding__form" action="">
+                    <span class="funding__dollar">&#36;</span>
+                    <input class="funding__form-amount" type="text" value="50"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <button class="funding__form-button" type="button">Give Now</button>
+                </form>
+                <a href="#" class="funding__link">Why give $50?</a>
+            </div>
+            <div class="funding__footer-buttons">
+                <a class="funding__button button" href="#">Save for later</a>
+                <a class="funding__button button" href="#">Tell your friends</a>
+            </div>
+        </div>
+        <!--funding__container-->
+    </div>
+    <!--funding__amount--main-content -->
+
+</body>
+
+</html>

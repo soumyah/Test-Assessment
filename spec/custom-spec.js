@@ -16,10 +16,6 @@ describe("Dynamic Buttons", function () {
     removeLabel('event', 'elementId', function () {
         return true;
     });
-    let activeTabs = jasmine.createSpy('ActiveTabs');
-    activeTabs('event', 'sectionId', function () {
-        return true;
-    });
     let validateForm = jasmine.createSpy('ValidateForm');
     validateForm('name', function () {
         return true;
@@ -57,10 +53,6 @@ describe("Dynamic Buttons", function () {
     it('When enter the values to the input field then validate the value with the validate form', function () {
         removeLabel('xyz', 'elementId');
         expect(validateForm).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(Function));
-    })
-
-    it('When click on the header tabs then activeTabs method should call', function () {
-        expect(activeTabs).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(String), jasmine.any(Function));
     });
 
     it('When enter the value in any of the input field then validateForm should call', function () {

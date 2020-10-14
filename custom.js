@@ -18,7 +18,7 @@ function buttonTags(index) {
 
     buttonElement.onclick = function (event) {
         console.log("Button Name: ", event.target.innerHTML);
-        console.log("Index: ", index)
+        console.log("Index: ", index);
     };
     let container = document.getElementById('dynamic-buttons');
     if (container) {
@@ -47,20 +47,6 @@ function removeLabel(event, elementId) {
         }
     }
     validateForm(event.target.name);
-}
-
-function activeTabs(event, sectionId) {
-    let i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(sectionId).style.display = "block";
-    event.currentTarget.className += " active";
 }
 
 function validateForm(name) {
