@@ -187,16 +187,16 @@ body {
 }
 
 /* Fund Related CSS */
-.funding__amount--main-content,
-.dynamic__buttons {
+.funding__amount--main-content {
     max-width: 630px;
     margin: 0px auto 40px;
-    justify-content: center;
-    display: flex;
 }
 
 .dynamic__buttons {
     margin: 100px auto;
+    max-width: 630px;
+    justify-content: center;
+    display: flex;
 }
 
 .funding__amount--main-content p {

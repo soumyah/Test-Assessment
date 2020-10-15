@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8">
     <title>Test Assessmen System C</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="fund-amount.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -28,8 +30,7 @@
                 <p>Join the <b>42</b> other donors who have already supported this project. Every dollar helps.</p>
                 <form class="funding__form" action="">
                     <span class="funding__dollar">&#36;</span>
-                    <input class="funding__form-amount" type="text" value="50"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <input class="funding__form-amount" type="text" value="50" onkeypress="isNumeric(event)">
                     <button class="funding__form-button" type="button">Give Now</button>
                 </form>
                 <a href="#" class="funding__link">Why give $50?</a>
@@ -41,7 +42,7 @@
         </div>
         <!--funding__container-->
     </div>
-    <!--funding__amount--main-content -->
+    <!--funding__amount -->
 
 </body>
 
