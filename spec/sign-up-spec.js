@@ -12,14 +12,6 @@ describe("Dynamic Buttons", function () {
     buttonTags(i, function () {
         return true;
     });
-    let removeLabel = jasmine.createSpy('RemoveLabel');
-    removeLabel('event', 'elementId', function () {
-        return true;
-    });
-    let validateForm = jasmine.createSpy('ValidateForm');
-    validateForm('name', function () {
-        return true;
-    });
     it('When the page loads, dynamicButtons method should call with n number of arguments', function () {
         expect(dynamicButtons).toHaveBeenCalledWith(jasmine.any(Number), jasmine.any(Function));
     });
@@ -44,18 +36,5 @@ describe("Dynamic Buttons", function () {
         jasmine.createSpy(document.getElementById('dynamic-buttons'), 'appendChild').and.returnValue(null);
         buttonTags(1);
         expect(document.getElementById('dynamic-buttons')).toEqual(null);
-    });
-
-    it('When enter the value to the input field then call the removeLabel method', function () {
-        expect(removeLabel).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(String), jasmine.any(Function));
-    });
-
-    it('When enter the values to the input field then validate the value with the validate form', function () {
-        removeLabel('xyz', 'elementId');
-        expect(validateForm).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(Function));
-    });
-
-    it('When enter the value in any of the input field then validateForm should call', function () {
-        expect(validateForm).toHaveBeenCalledWith(jasmine.any(String), jasmine.any(Function));
     });
 });

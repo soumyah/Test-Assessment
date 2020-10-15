@@ -190,8 +190,7 @@ body {
 .funding__amount--main-content,
 .dynamic__buttons {
     max-width: 630px;
-    margin: 40px auto;
-    padding: 15px;
+    margin: 0px auto 40px;
     justify-content: center;
     display: flex;
 }
