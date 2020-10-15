@@ -195,6 +195,10 @@ body {
     display: flex;
 }
 
+.dynamic__buttons {
+    margin: 100px auto;
+}
+
 .funding__amount--main-content p {
     margin-top: 0;
     margin-bottom: 16px;
